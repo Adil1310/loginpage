@@ -1,0 +1,48 @@
+function signUp() {
+    let users
+    if (localStorage.getItem("users")) {
+        users = JSON.parse(localStorage.getItem("users"))
+    } else {
+        users = []
+    }
+    let user = {
+        email: document.querySelector("#email").value,
+        password: document.querySelector("#password").value,
+        name: document.querySelector("#name").value,
+        surname: document.querySelector("#surname").value,
+        age: document.querySelector("#age").value,
+    }
+
+    let findUser = users.filter(person => person.email == user.email)
+    if(findUser.length > 0){
+        alert("This e-mail already exist")
+        return
+    }
+
+    if(checkData(user)) {
+        users.push(user)
+        localStorage.setItem("users", JSON.stringify(users))
+        window.location.href = 'index.html'
+    }
+}
+
+function checkData(user) {
+    if (!validateEmail(user.email)) {
+        alert("Incorrect email!")
+        return false;
+    } else if (user.name.length < 1 || user.surname.length < 1
+    || user.password.length < 1 || user.age.length < 1) {
+        alert('Complete all data!')
+        return false;
+    } else {
+        return true;
+    }   
+}
+
+const validateEmail = (email) => {
+    return String(email)
+        .toLowerCase()
+        .match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+}

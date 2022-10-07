@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+    background-color: #524f4f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #f0f8ff;
+    padding: 10%;
+}
+.bt{
+    margin-top: 10px;
+    width: 150px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 700;
+}
+a{
+    text-decoration: none;
+    color: #000000;
+}
+
+
+h3{
+    color: #8fdada;
+}
+p{
+    color: #f0f8ff;
+}
