@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,15 +9,46 @@
     <link rel="stylesheet" href="./homepage.css">
     <link rel="shortcut icon" href="./homepagelogo.png">
 </head>
+
 <body>
-    <h1>Login</h1>
+    <div class="header">
+        <h1>Home page</h1>
+        <div class="header-search">
+            <input class="findOut">
+            <button class="search-button" onclick="searchBtn()">Search</button>
+        </div>
+    </div>
 
-    <h3>Name:<p id="name"></p></h3>
-    <h3>Surname:<p id="surname"></p></h3>
-    <h3>Age:<p id="age"></p></h3>
-
-    <button class="bt" onclick="logOut()">Log out</a></button>
-    <button class="bt" onclick="deleteAcc()">Delet my account</button>
+    <div class="container">
+        <div class="left-menu">
+            <h2>Personal data</h2>
+            <h3>Name:<p id="name"></p></h3>
+            <h3>Surname:<p id="surname"></p></h3>
+            <h3>Age:<p id="age"></p></h3>
+        </div>
+        <div class="right-menu">
+            <div class="right-menu-top fd"> 
+                <button class="bt" onclick="editProfile()">Edit profile</a></button>
+            </div>
+            <div class="right-menu-footer">
+                <button class="bt" onclick="logOut()">Log out</a></button>
+                <button class="bt" onclick="deleteAcc()">Delet my account</button>
+            </div>
+        </div>   
+    </div>
+    <div class="other-users mt">
+        <h2>Other users</h2>
+        <table class="user-list">
+            <tr>
+                <th>ID</th>
+                <th>E-mail</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Age</th>
+            </tr>
+        </table>
+    </div>
     <script src="./homepage.js"></script>
 </body>
+
 </html>
