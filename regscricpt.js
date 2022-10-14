@@ -33,7 +33,7 @@ function checkData(user) {
     } else if (!validateAge(user.age)) {
         alert("Incorrect age")
         return false;
-    } else if (!spaceValidation(user.password)){
+    } else if (!spaceValidation(user.password)) {
         alert("Shouldn't be blank or contain blank space!")
         return false;
     } else if (user.name.length < 1 || user.surname.length < 1
@@ -62,7 +62,7 @@ const validateAge = (age) => {
 
 const spaceValidation = (password) => {
     return String(password)
-    .match(
-        /^\S*[A-Z]\S*$/
-    );
+        .match(
+            /^\S*[A-Z]\S*$/
+        );
 }

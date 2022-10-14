@@ -15,6 +15,11 @@ function getCurrentUser() {
     ageEl.textContent = currentUser.age
 }
 
+function searchBtn(){
+
+    }
+
+
 function logOut() {
     localStorage.removeItem("currentUser")
     window.location.href = 'index.html'
@@ -50,24 +55,6 @@ function getOtherUsers() {
     });
 }
 
-function searchBtn(){
-    let users = JSON.parse(localStorage.getItem("users"), function (key, value) {
-        if (key == "password") return undefined;
-        return value;
-    })
-    let currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    let searchUsers = users.filter(user => user.email != currentUser.email);
-
-    let searchElements = document.querySelector(".findOut").value
-    searchUsers.forEach((element, index) => {
-        listElements.innerHTML += `
-        <tr>
-            <td>${}</td>
-            <td>${}</td>
-            <td>${}</td>
-            <td>${}</td>
-            <td>${}</td>
-        </tr>`
-    })
+function editProfile(){
+    
 }
-searchBtn()

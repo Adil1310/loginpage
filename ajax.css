@@ -1,0 +1,15 @@
+.colors{
+    display: flex;
+}
+.color{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.color-space{
+    width: 298px;
+    height: 300px;
+    border: 1px solid black;
+    margin-top: 2%;
+}
