@@ -5,38 +5,6 @@ body{
     color: #f0f8ff;
     padding: 5%;
 }
-/* ================================Color-Menu==================================== */
-
-.colors-menu{
-    width: 95%;
-    height: 200px;
-    border-bottom: 2px solid #ffffff;
-    border: 1px solid red;
-}
-section{
-    width: 200px;
-    height: 200px;
-    color: #7bc4c4;
-}
-.bg{
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ============================================================================== */
 .bt{
     margin-top: 10px;
     width: 150px;

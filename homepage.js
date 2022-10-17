@@ -15,10 +15,40 @@ function getCurrentUser() {
     ageEl.textContent = currentUser.age
 }
 
-function searchBtn(){
+//=============================================================================
 
-    }
+let colors = [];
 
+getColors()
+
+function getColors() {
+    let xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            JSON.parse(xhr.response).data.forEach(element => {
+                colors.push(element);
+            });
+            makeColorBlocks();
+        }
+    };
+    xhr.open("GET", "https://reqres.in/api/unknown", true);
+    xhr.send();
+}
+
+function makeColorBlocks() {
+    let elColors = document.querySelector(".colors");
+    colors.forEach(element => {
+        elColors.innerHTML += `<option value="${element.color}" style="background-color:${element.color}" onchange="changeColor()">${element.color}</option>`
+    })
+}
+function changeColor(getColor) {
+    let elColorSpace = document.querySelector("body");
+    selectColor = getColor.value;
+    elColorSpace.style.background = selectColor;
+}
+
+//=============================================================================
 
 function logOut() {
     localStorage.removeItem("currentUser")
@@ -53,8 +83,4 @@ function getOtherUsers() {
             <td>${element.email}</td>
         </tr>`
     });
-}
-
-function editProfile(){
-    
 }

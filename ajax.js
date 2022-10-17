@@ -24,13 +24,10 @@ function getColors() {
 function makeColorBlocks() {
     let elColors = document.querySelector(".colors");
     colors.forEach(element => {
-        elColors.innerHTML += `
-            <div class="color" style="background-color:${element.color}"
-            onclick="changeColor()"></div>
-        `
+        elColors.innerHTML += `<div class="color" style="background-color:${element.color}" onclick="changeColor()"></div>`
     })
 }
 function changeColor() {
-    let elColorSpace = document.querySelector(".color-space");
+    let elColorSpace = document.querySelector("body");
     elColorSpace.style.backgroundColor = event.path[0].style.backgroundColor;
 }
